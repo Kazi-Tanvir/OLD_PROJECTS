@@ -1,0 +1,78 @@
+# MASTER PROJECT CONTEXT: DCITC React Rebuild
+
+## 1. Project Overview
+I am rebuilding the Dhaka College IT Club (DCITC) website from a vanilla HTML/CSS/JS stack into a modern React Single Page Application (SPA). The website features heavy interactivity, 3D elements, scroll animations, and a dark-themed glassmorphism aesthetic.
+
+## 2. Tech Stack & Libraries
+When generating code for this project, strictly adhere to the following React-friendly stack:
+- Framework: React (functional components, hooks)
+- Routing: `react-router-dom`
+- Styling: Standard CSS/CSS Modules with global CSS variables (Dark Theme primary).
+- Animations: `framer-motion` (preferred for entrance/scroll animations) or `@gsap/react`.
+- Particles: `react-tsparticles`
+- 3D/Tilt Effects: `react-parallax-tilt` (replace Vanilla Tilt/jQuery) and `@react-three/fiber` (for raw Three.js elements).
+- Notifications/Popups: `react-toastify` or `sonner`.
+- Icons: Font Awesome (via `react-fontawesome`).
+
+## 3. Design System & Global Styles
+- Colors: 
+  - `--primary-color`: `#00b4db`
+  - `--secondary-color`: `#0083b0`
+  - `--bg-body`: `#0c0c14` (Dark mode default)
+  - `--bg-surface-1`: `#1a1a1a` (Glass cards)
+  - `--text-primary`: `#ffffff`
+- Typography: 'Inter' for body, 'Montserrat' for headings.
+- UI Style: Glassmorphism (semi-transparent backgrounds with `backdrop-filter: blur`), glowing borders on hover, interactive floating tech particles.
+
+## 4. Architecture & Component Strategy
+- Do NOT repeat UI code. Extract repetitive elements into reusable components (e.g., `<GlassCard />`, `<SectionHeader />`, `<FilterBar />`, `<Modal />`).
+- The application uses a global `<Layout />` component containing the persistent `<Navbar />` and `<Footer />`.
+
+## 5. STRICT Data Handling Rules (CRITICAL)
+NEVER hardcode paragraphs, lists, statistics, or arrays of items directly into the React JSX components. 
+- All data MUST be isolated in a `src/data/` directory.
+- Components must import this data and use `.map()` to render the UI dynamically.
+
+Data File Structures to assume/create:
+- `src/data/departments.js`: Array of objects containing department names, icons, stats, and tech stacks.
+- `src/data/executives.js`: Arrays of objects separated by year (2023-2024, etc.), containing names, roles, departments, images, and social links.
+- `src/data/events.js`: Array of event objects with dates, categories, locations, and descriptions.
+- `src/data/projects.js`: Array of projects categorized by domain (Web Dev, CP, Robotics, etc.) with tech stacks and GitHub links.
+- `src/data/gallery.js`: Array of image metadata (ID, path, featured status).
+
+## 6. Request Context
+When I ask you to build a specific page or component (e.g., "Build the Events page"), you must:
+1. Provide the code for the reusable data structure (e.g., the array in `src/data/events.js`).
+2. Provide the code for any smaller sub-components needed (e.g., `<EventCard />`).
+3. Provide the main page component that imports the data and maps it to the sub-components.
+4. Apply the defined design system (glassmorphism, CSS variables).
+
+---
+
+This project uses the following dependencies:
+
+- `@fortawesome/fontawesome-svg-core`: Core Font Awesome library
+- `@fortawesome/free-brands-svg-icons`: Free brand icons
+- `@fortawesome/free-solid-svg-icons`: Free solid icons
+- `@fortawesome/react-fontawesome`: React component for Font Awesome
+- `@gsap/react`: GSAP integration for React
+- `@react-three/fiber`: React Three Fiber for 3D rendering
+- `framer-motion`: Motion library for animations
+- `gsap`: GreenSock Animation Platform
+- `luxon`: Date/time library
+- `react`: React library
+- `react-dom`: React DOM
+- `react-parallax-tilt`: Parallax tilt effect
+- `react-router-dom`: React router
+- `react-tsparticles`: Particles library
+- `sonner`: Notifications library
+- `three`: Three.js library
+- `tsparticles`: Particles library
+
+---
+
+This project uses the following devDependencies:
+
+- `@types/three`: TypeScript definitions for Three.js
+- `@vitejs/plugin-react`: Vite plugin for React
+- `vite`: Vite build tool

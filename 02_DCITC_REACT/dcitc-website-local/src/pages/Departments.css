@@ -1,0 +1,109 @@
+/* ===========================================
+   Departments Page Styles
+   =========================================== */
+
+.departments-page {
+  padding: var(--space-20) var(--space-6);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Filter Bar */
+.departments-page .filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-10);
+}
+
+.departments-page .filter-btn {
+  padding: var(--space-3) var(--space-5);
+  background: var(--bg-surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.departments-page .filter-btn:hover {
+  background: rgba(0, 180, 219, 0.1);
+  border-color: rgba(0, 180, 219, 0.3);
+  color: var(--primary-color);
+}
+
+.departments-page .filter-btn.active {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-color: transparent;
+  color: var(--text-primary);
+}
+
+/* Departments Grid */
+.departments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Empty State */
+.departments-page .empty-state {
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--text-secondary);
+}
+
+.departments-page .empty-state p {
+  font-size: var(--text-lg);
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+@media (max-width: 1024px) {
+  .departments-grid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 768px) {
+  .departments-page {
+    padding: var(--space-16) var(--space-4);
+  }
+
+  .departments-page .filter-bar {
+    gap: var(--space-2);
+  }
+
+  .departments-page .filter-btn {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+  }
+
+  .departments-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .departments-page {
+    padding: var(--space-12) var(--space-3);
+  }
+
+  .departments-page .filter-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: var(--space-2);
+  }
+
+  .departments-page .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}

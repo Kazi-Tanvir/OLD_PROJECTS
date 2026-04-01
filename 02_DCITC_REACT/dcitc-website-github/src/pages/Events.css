@@ -1,0 +1,36 @@
+/* ===========================================
+   Events Page Styles
+   =========================================== */
+
+.events-page {
+  min-height: 100vh;
+  padding: var(--space-8) 0;
+}
+
+.events-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Events View Container */
+.events-view-container {
+  min-height: 400px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .events-page {
+    padding: var(--space-6) 0;
+  }
+
+  .events-container {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .events-container {
+    padding: 0 var(--space-3);
+  }
+}

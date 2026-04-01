@@ -1,0 +1,289 @@
+/* ===========================================
+   Executives Page Styles
+   =========================================== */
+
+.executives-page {
+  min-height: 100vh;
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-15);
+}
+
+/* Page Header */
+.executives-header {
+  padding: var(--space-10) 0 var(--space-8);
+  text-align: center;
+}
+
+/* ===========================================
+   Session Tabs
+   =========================================== */
+
+.executives-tabs-section {
+  padding: var(--space-4) 0;
+}
+
+.executives-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.executives-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.executives-tab:hover {
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+  background: rgba(0, 180, 219, 0.1);
+}
+
+.executives-tab.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--bg-body);
+}
+
+.executives-tab-icon {
+  font-size: var(--text-lg);
+}
+
+/* ===========================================
+   Department Filter
+   =========================================== */
+
+.executives-filter-section {
+  padding: var(--space-6) 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  overflow: hidden;
+}
+
+.executives-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.filter-icon {
+  color: var(--primary-color);
+}
+
+.executives-filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.executives-filter-btn {
+  padding: var(--space-2) var(--space-4);
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.executives-filter-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.executives-filter-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--bg-body);
+}
+
+/* ===========================================
+   Executives Grid Section
+   =========================================== */
+
+.executives-grid-section {
+  padding: var(--space-10) 0;
+}
+
+.executives-results-info {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.executives-results-info p {
+  color: var(--text-secondary);
+  font-size: var(--text-base);
+}
+
+.results-count {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.executives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Empty State */
+.executives-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-15) var(--space-4);
+}
+
+.executives-empty-state p {
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+}
+
+/* ===========================================
+   Container Utility
+   =========================================== */
+
+.executives-page .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+@media (max-width: 1024px) {
+  .executives-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 768px) {
+  .executives-page {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-12);
+  }
+
+  .executives-header {
+    padding: var(--space-8) 0 var(--space-6);
+  }
+
+  .executives-tabs {
+    gap: var(--space-2);
+  }
+
+  .executives-tab {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .executives-tab-icon {
+    font-size: var(--text-base);
+  }
+
+  .executives-filter-buttons {
+    gap: var(--space-2);
+  }
+
+  .executives-filter-btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .executives-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .executives-page .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .executives-header {
+    padding: var(--space-6) 0 var(--space-4);
+  }
+
+  .executives-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .executives-tab {
+    justify-content: center;
+  }
+
+  .executives-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-3);
+  }
+
+  .executives-page .container {
+    padding: 0 var(--space-3);
+  }
+}
+
+/* ===========================================
+   Animations
+   =========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.executives-grid > * {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Stagger animation for cards */
+.executives-grid > *:nth-child(1) { animation-delay: 0s; }
+.executives-grid > *:nth-child(2) { animation-delay: 0.05s; }
+.executives-grid > *:nth-child(3) { animation-delay: 0.1s; }
+.executives-grid > *:nth-child(4) { animation-delay: 0.15s; }
+.executives-grid > *:nth-child(5) { animation-delay: 0.2s; }
+.executives-grid > *:nth-child(6) { animation-delay: 0.25s; }
+.executives-grid > *:nth-child(7) { animation-delay: 0.3s; }
+.executives-grid > *:nth-child(8) { animation-delay: 0.35s; }
+.executives-grid > *:nth-child(9) { animation-delay: 0.4s; }
+.executives-grid > *:nth-child(10) { animation-delay: 0.45s; }
+.executives-grid > *:nth-child(11) { animation-delay: 0.5s; }
+.executives-grid > *:nth-child(12) { animation-delay: 0.55s; }
+.executives-grid > *:nth-child(13) { animation-delay: 0.6s; }
+.executives-grid > *:nth-child(14) { animation-delay: 0.65s; }
+.executives-grid > *:nth-child(15) { animation-delay: 0.7s; }

@@ -1,0 +1,289 @@
+/* ===========================================
+   Executive Modal Styles
+   =========================================== */
+
+.executive-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+
+.executive-modal-container {
+  position: relative;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(0, 180, 219, 0.2);
+}
+
+/* Close Button */
+.executive-modal-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.executive-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--primary-color);
+  transform: rotate(90deg);
+}
+
+/* Modal Content Layout */
+.executive-modal-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--space-8);
+  padding: var(--space-8);
+}
+
+/* Image Section */
+.executive-modal-image-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.executive-modal-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.executive-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.executive-modal-image-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  box-shadow: inset 0 0 30px rgba(0, 180, 219, 0.3);
+  pointer-events: none;
+}
+
+/* Details Section */
+.executive-modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.executive-modal-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.executive-modal-position {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.executive-modal-department {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Section Titles */
+.executive-modal-section-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 var(--space-2) 0;
+}
+
+/* Skills */
+.executive-modal-skills {
+  margin-top: var(--space-2);
+}
+
+.executive-modal-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.executive-modal-skill-tag {
+  padding: var(--space-1) var(--space-3);
+  background: rgba(0, 180, 219, 0.15);
+  border: 1px solid rgba(0, 180, 219, 0.3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+/* Bio */
+.executive-modal-bio {
+  margin-top: var(--space-2);
+}
+
+.executive-modal-bio-text {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Social Links */
+.executive-modal-socials {
+  margin-top: var(--space-4);
+}
+
+.executive-modal-social-links {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.executive-modal-social-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.executive-modal-social-link:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--bg-body);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 180, 219, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .executive-modal-container {
+    max-height: 95vh;
+  }
+
+  .executive-modal-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    padding: var(--space-6);
+  }
+
+  .executive-modal-image-section {
+    justify-content: center;
+  }
+
+  .executive-modal-image-wrapper {
+    max-width: 200px;
+  }
+
+  .executive-modal-name {
+    font-size: var(--text-2xl);
+    text-align: center;
+  }
+
+  .executive-modal-position,
+  .executive-modal-department {
+    text-align: center;
+  }
+
+  .executive-modal-skills-list {
+    justify-content: center;
+  }
+
+  .executive-modal-bio-text {
+    text-align: center;
+  }
+
+  .executive-modal-social-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .executive-modal-overlay {
+    padding: var(--space-2);
+  }
+
+  .executive-modal-content {
+    padding: var(--space-4);
+    padding-top: var(--space-12);
+  }
+
+  .executive-modal-close {
+    top: var(--space-2);
+    right: var(--space-2);
+  }
+
+  .executive-modal-image-wrapper {
+    max-width: 160px;
+  }
+
+  .executive-modal-skill-tag {
+    font-size: var(--text-xs);
+  }
+}
+
+/* Scrollbar Styling */
+.executive-modal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.executive-modal-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.executive-modal-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 180, 219, 0.3);
+  border-radius: 4px;
+}
+
+.executive-modal-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 180, 219, 0.5);
+}

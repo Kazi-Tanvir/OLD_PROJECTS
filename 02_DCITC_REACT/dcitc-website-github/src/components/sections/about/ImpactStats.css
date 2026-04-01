@@ -1,0 +1,118 @@
+/* ===========================================
+   Impact Stats Component Styles
+   =========================================== */
+
+.impact-stats-section {
+  padding: var(--space-10) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Stat Card */
+.stat-card {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  transition: all var(--transition-medium);
+}
+
+.stat-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 30px rgba(0, 180, 219, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Icon Wrapper */
+.stat-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 180, 219, 0.1);
+  border: 1px solid rgba(0, 180, 219, 0.2);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-medium);
+}
+
+.stat-card:hover .stat-icon-wrapper {
+  background: rgba(0, 180, 219, 0.15);
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.stat-icon {
+  font-size: var(--text-2xl);
+  color: var(--primary-color);
+}
+
+/* Stat Value */
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat-suffix {
+  color: var(--primary-color);
+}
+
+/* Stat Label */
+.stat-label {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .stat-card {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .stat-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-bottom: var(--space-3);
+  }
+
+  .stat-icon {
+    font-size: var(--text-lg);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-1);
+  }
+
+  .stat-label {
+    font-size: var(--text-xs);
+  }
+}

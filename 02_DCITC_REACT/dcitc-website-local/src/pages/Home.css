@@ -1,0 +1,28 @@
+/* ===========================================
+   Home Page Styles
+   =========================================== */
+
+.home-page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Section Spacing Consistency */
+.home-page section {
+  position: relative;
+}
+
+/* Smooth scroll target offset for fixed navbar */
+.home-page section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* ===========================================
+   Responsive Adjustments
+   =========================================== */
+
+@media (max-width: 768px) {
+  .home-page section[id] {
+    scroll-margin-top: 70px;
+  }
+}

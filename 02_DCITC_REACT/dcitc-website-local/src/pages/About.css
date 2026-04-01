@@ -1,0 +1,298 @@
+/* ===========================================
+   About Page Styles
+   =========================================== */
+
+.about-page {
+  min-height: 100vh;
+  padding-bottom: var(--space-15);
+}
+
+/* Container */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* ===========================================
+   Hero Section
+   =========================================== */
+
+.about-hero {
+  padding: var(--space-15) 0 var(--space-12);
+}
+
+.about-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+/* Logo Wrapper */
+.about-logo-wrapper {
+  flex-shrink: 0;
+}
+
+.tilt-wrapper {
+  display: block;
+}
+
+.logo-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+}
+
+.about-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-2xl);
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 180, 219, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Hero Text */
+.about-hero-text {
+  flex: 1;
+}
+
+.about-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 50%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 var(--space-4) 0;
+  line-height: 1.2;
+}
+
+.about-subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 0 var(--space-6) 0;
+  max-width: 600px;
+}
+
+.about-divider {
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: var(--radius-full);
+}
+
+/* ===========================================
+   About Cards Section
+   =========================================== */
+
+.about-cards-section {
+  padding: var(--space-10) 0;
+}
+
+.about-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+/* Individual Card */
+.about-card {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-card-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 180, 219, 0.1);
+  border: 1px solid rgba(0, 180, 219, 0.2);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-2xl);
+  color: var(--primary-color);
+  margin-bottom: var(--space-5);
+  transition: all var(--transition-medium);
+}
+
+.about-card:hover .about-card-icon {
+  background: rgba(0, 180, 219, 0.15);
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.about-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.about-card-description {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===========================================
+   Timeline Section
+   =========================================== */
+
+.about-timeline-section {
+  padding: var(--space-15) 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 20%,
+    rgba(0, 0, 0, 0.2) 80%,
+    transparent 100%
+  );
+}
+
+/* ===========================================
+   Impact Stats Section
+   =========================================== */
+
+.about-impact-section {
+  padding: var(--space-15) 0;
+}
+
+/* ===========================================
+   FAQ Section
+   =========================================== */
+
+.about-faq-section {
+  padding: var(--space-15) 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 20%,
+    rgba(0, 0, 0, 0.2) 80%,
+    transparent 100%
+  );
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+@media (max-width: 1024px) {
+  .about-hero-container {
+    gap: var(--space-8);
+  }
+
+  .logo-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-cards-grid {
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: var(--space-12) 0 var(--space-10);
+  }
+
+  .about-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-divider {
+    margin: 0 auto;
+  }
+
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .about-container {
+    padding: 0 var(--space-4);
+  }
+
+  .about-timeline-section,
+  .about-impact-section,
+  .about-faq-section {
+    padding: var(--space-10) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .logo-container {
+    width: 160px;
+    height: 160px;
+    padding: var(--space-4);
+  }
+
+  .about-title {
+    font-size: 1.75rem;
+  }
+
+  .about-subtitle {
+    font-size: var(--text-base);
+  }
+
+  .about-card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: var(--text-xl);
+  }
+
+  .about-card-title {
+    font-size: var(--text-lg);
+  }
+
+  .about-card-description {
+    font-size: var(--text-sm);
+  }
+}

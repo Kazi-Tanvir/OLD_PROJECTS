@@ -1,0 +1,313 @@
+/* ===========================================
+   Featured Projects Section Styles
+   =========================================== */
+
+.featured-projects-section {
+  position: relative;
+  padding: var(--space-15) 0;
+  background: linear-gradient(
+    180deg,
+    var(--bg-body) 0%,
+    var(--bg-surface-1) 50%,
+    var(--bg-body) 100%
+  );
+}
+
+.featured-projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Projects Grid - 3 columns */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-10);
+}
+
+/* Project Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 !important;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 180, 219, 0.15);
+}
+
+/* Project Image - 4:3 aspect ratio */
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Overlay on Hover */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  gap: var(--space-3);
+  transform: translateY(20px);
+  transition: transform var(--transition-medium);
+}
+
+.project-card:hover .project-links {
+  transform: translateY(0);
+}
+
+.project-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: var(--text-lg);
+  transition: all var(--transition-fast);
+}
+
+.project-link:hover {
+  background: var(--primary-color);
+  color: var(--bg-body);
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* Project Content */
+.project-content {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+/* Project Category */
+.project-category {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Project Title */
+.project-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* Project Description */
+.project-description {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tech Stack */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tech-tag {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-xs);
+  background: rgba(0, 180, 219, 0.1);
+  color: var(--primary-color);
+  border: 1px solid rgba(0, 180, 219, 0.2);
+  border-radius: var(--radius-md);
+}
+
+/* Project Stats */
+.project-stats {
+  display: flex;
+  gap: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--glass-border);
+  margin-top: auto;
+}
+
+.project-stats .stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.project-stats .stat svg {
+  color: var(--primary-color);
+  font-size: var(--text-xs);
+}
+
+/* View All CTA */
+.projects-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.projects-cta a {
+  display: inline-block;
+}
+
+/* ===========================================
+   Responsive Design
+   =========================================== */
+
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-projects-section {
+    padding: var(--space-12) 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Horizontal layout - fully interactive */
+  .project-card {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 140px;
+  }
+
+  .project-image-wrapper {
+    width: 120px;
+    min-height: 100%;
+    aspect-ratio: unset;
+    flex-shrink: 0;
+  }
+
+  /* Always show overlay on mobile for touch interaction */
+  .project-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      180deg,
+      transparent 30%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .project-links {
+    transform: translateY(0);
+    gap: var(--space-2);
+  }
+
+  .project-link {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-base);
+  }
+
+  .project-content {
+    padding: var(--space-3);
+    gap: var(--space-2);
+    justify-content: space-between;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .project-category {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .project-title {
+    font-size: var(--text-sm);
+    line-height: 1.3;
+  }
+
+  .project-description {
+    display: none;
+  }
+
+  /* Show tech tags */
+  .project-tech {
+    display: flex;
+    gap: var(--space-1);
+    flex-wrap: wrap;
+  }
+
+  .tech-tag {
+    padding: 2px var(--space-2);
+    font-size: 10px;
+  }
+
+  /* Show stats in compact form */
+  .project-stats {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-3);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--glass-border);
+    margin-top: auto;
+  }
+
+  .project-stats .stat {
+    font-size: var(--text-xs);
+    gap: var(--space-1);
+  }
+
+  .project-stats .stat svg {
+    font-size: 10px;
+  }
+}
