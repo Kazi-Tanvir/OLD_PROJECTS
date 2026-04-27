@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBSE 18 MacBook Terminal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            /* Desktop background simulating a blurred wallpaper */
-            background: linear-gradient(135deg, #1f2937, #000000);
+            /* Fullscreen background image */
+            background: url('image.png') no-repeat center center fixed;
+            background-size: cover;
             font-family: 'Share Tech Mono', 'Ubuntu Mono', monospace;
             margin: 0;
             overflow-x: hidden;
@@ -21,7 +24,7 @@
             background-color: rgba(5, 5, 5, 0.95);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.05) inset;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
         }
 
         .title-bar {
@@ -39,23 +42,27 @@
             width: 8px;
             height: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: transparent;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #22c55e;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #16a34a;
         }
     </style>
 </head>
+
 <body class="min-h-screen p-4 md:p-12 flex flex-col items-center justify-center">
 
     <!-- MacBook Window Container -->
-    <div class="mac-window w-full max-w-6xl mx-auto rounded-xl overflow-hidden flex flex-col">
-        
+    <div class="mac-window w-full max-w-4xl mx-auto rounded-xl overflow-hidden flex flex-col">
+
         <!-- macOS Title Bar -->
         <div class="title-bar h-8 w-full flex items-center px-4 gap-2 relative">
             <div class="flex gap-2">
@@ -63,18 +70,20 @@
                 <div class="w-3 h-3 rounded-full bg-[#ffbd2e] shadow-inner"></div>
                 <div class="w-3 h-3 rounded-full bg-[#27c93f] shadow-inner"></div>
             </div>
-            <div class="absolute w-full text-center text-xs text-gray-400 font-sans tracking-wide left-0 pointer-events-none">
+            <div
+                class="absolute w-full text-center text-xs text-gray-400 font-sans tracking-wide left-0 pointer-events-none">
                 bash - du@iit - 100x35
             </div>
         </div>
 
         <!-- Terminal Content Area -->
         <div id="terminal-window" class="p-6 md:p-8 flex flex-col flex-grow justify-center">
-            
-            <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-                
+
+            <div class="flex flex-col md:flex-row gap-8 md:gap-8 items-center">
+
                 <!-- Left Side: ASCII Art (18) -->
-                <div id="ascii-art" class="text-[6px] sm:text-[8px] md:text-[11px] lg:text-[12px] leading-[1.15] tracking-[0.15em] whitespace-nowrap mt-1">
+                <div id="ascii-art"
+                    class="text-[6px] sm:text-[8px] md:text-[11px] lg:text-[12px] leading-[1.4] tracking-[0.15em] whitespace-nowrap mt-1">
                     <!-- JavaScript will inject the 18 design here instantly -->
                 </div>
 
@@ -84,16 +93,20 @@
                         du@iit
                     </div>
                     <div class="text-green-700 mb-2 font-bold">-----------------</div>
-                    
-                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">OS:</span> macOS 14.2.1 (Sonoma)</div>
-                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Host:</span> BBSE Terminal node-18</div>
-                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">University:</span> Dhaka University</div>
+
+                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">OS:</span>Ubuntu 24.04 LTS</div>
+                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Host:</span> BSSE Terminal
+                        node-18</div>
+                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">University:</span> Dhaka
+                        University</div>
                     <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Department:</span> IIT</div>
                     <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Version:</span> BSSE v18</div>
-                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Students:</span> 47 (Active Nodes)</div>
+                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Students:</span> 47 (Active
+                        Nodes)</div>
                     <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Session:</span> 2025-26</div>
-                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Uptime:</span> <span id="uptime">0 days, 0 mins</span></div>
-                    
+                    <div class="flex gap-2"><span class="text-green-400 font-bold w-24">Uptime:</span> <span
+                            id="uptime">0 days, 0 mins</span></div>
+
                     <!-- Color Blocks for Hacker Green Theme -->
                     <div class="flex gap-0 mt-4">
                         <div class="w-5 h-5 bg-[#052e16]"></div>
@@ -110,7 +123,7 @@
 
             <!-- Terminal Command Prompt -->
             <div class="mt-8 text-sm md:text-lg font-bold w-full text-green-500">
-                <span class="text-green-400 text-shadow-glow">du@iit</span>:<span class="text-green-600">~</span>$ 
+                <span class="text-green-400 text-shadow-glow">du@iit</span>:<span class="text-green-600">~</span>$
                 <span class="inline-block w-2.5 md:w-3 h-5 md:h-6 bg-green-400 align-middle animate-pulse ml-1"></span>
             </div>
 
@@ -120,37 +133,33 @@
     <script>
         // Data provided by user
         const names = [
-            "Shafin", "Fatin", "Pramanik", "Yusha", "Abir", "Siddik", "Limon", "Araf", 
-            "Mahadi", "Shobhon", "Sadman", "Tanvir", "Najibah", "Aadib", "Ahnaf", 
-            "Tamim", "Samir", "Suraiya", "Tanim", "Nasif", "Shuvo", "Hasnat", 
-            "Nahian", "Fahim", "Bashar", "Syeda", "Tasib", "Zawat", "Snaho", 
-            "Hasib", "Turjo", "Parthib", "Risal", "Armita", "Tahsin", "Mahafujar", 
-            "Sajid", "Saiful", "Nubala", "Topu", "Zubaira", "Sabiha", "Ahmed", 
+            "Shafin", "Fatin", "Pramanik", "Yusha", "Abir", "Siddik", "Limon", "Araf",
+            "Mahadi", "Shobhon", "Sadman", "Tanvir", "Najibah", "Aadib", "Ahnaf",
+            "Tamim", "Samir", "Suraiya", "Tanim", "Nasif", "Shuvo", "Hasnat",
+            "Nahian", "Fahim", "Bashar", "Syeda", "Tasib", "Zawat", "Snaho",
+            "Hasib", "Turjo", "Parthib", "Risal", "Armita", "Tahsin", "Mahafujar",
+            "Sajid", "Saiful", "Nubala", "Topu", "Zubaira", "Sabiha", "Ahmed",
             "Rafiu", "Bushra", "Sadik", "Shibli"
         ];
 
         // The exact shape approved by the user, with reduced gap between 1 and 8
         const rawShape = [
-            "            @@@@@@@@@             @@@@@@@@@@@@@@@@@@      ",
-            "          @@@@@@@@@@@           @@@@@@@@@@@@@@@@@@@@@@    ",
-            "        @@@@@@@@@@@@@         @@@@@@@@@@@@@@@@@@@@@@@@@@  ",
-            "      @@@@@@   @@@@@@         @@@@@@              @@@@@@  ",
-            "     @@@@@@    @@@@@@         @@@@@@              @@@@@@  ",
-            "    @@@@@@     @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@@@@@@@@@@@@@@@@@@@@@  ",
-            "               @@@@@@           @@@@@@@@@@@@@@@@@@@@@@    ",
-            "               @@@@@@         @@@@@@@@@@@@@@@@@@@@@@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "               @@@@@@         @@@@@@              @@@@@@  ",
-            "      @@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@@@@@@@@@@@@@@  ",
-            "      @@@@@@@@@@@@@@@@@@@@@@    @@@@@@@@@@@@@@@@@@@@@@    ",
-            "      @@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@      "
+            "          @@@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@     ",
+            "        @@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@   ",
+            "      @@@@@@   @@@@@@     @@@@@@              @@@@@@  ",
+            "     @@@@@@    @@@@@@     @@@@@@              @@@@@@  ",
+            "    @@@@@@     @@@@@@     @@@@@@              @@@@@@  ",
+            "               @@@@@@     @@@@@@              @@@@@@  ",
+            "               @@@@@@      @@@@@              @@@@@   ",
+            "               @@@@@@       @@@@@@@@@@@@@@@@@@@@@@    ",
+            "               @@@@@@       @@@@@@@@@@@@@@@@@@@@@@    ",
+            "               @@@@@@      @@@@@              @@@@@   ",
+            "               @@@@@@     @@@@@@              @@@@@@  ",
+            "               @@@@@@     @@@@@@              @@@@@@  ",
+            "               @@@@@@     @@@@@@              @@@@@@  ",
+            "               @@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@  ",
+            "               @@@@@@        @@@@@@@@@@@@@@@@@@@@     ",
+            "                                                          "
         ];
 
         // Shuffle names initially to create a random but guaranteed queue
@@ -181,21 +190,21 @@
             while (currentLen < L) {
                 let remaining = L - currentLen;
                 let needsSeparator = currentLen > 0 ? 1 : 0;
-                
+
                 let name = getBestName(remaining - needsSeparator);
-                
+
                 if (name) {
                     if (needsSeparator) {
                         resultHTML += `<span class="text-green-800 opacity-60">.</span>`;
                         currentLen += 1;
                     }
                     isPrimaryColor = !isPrimaryColor;
-                    
+
                     // Restored the original green glow theme
-                    let colorClass = isPrimaryColor 
-                        ? 'text-green-300 font-bold text-shadow-glow' 
-                        : 'text-green-500 font-bold'; 
-                        
+                    let colorClass = isPrimaryColor
+                        ? 'text-green-300 font-bold text-shadow-glow'
+                        : 'text-green-500 font-bold';
+
                     resultHTML += `<span class="${colorClass}">${name.toUpperCase()}</span>`;
                     currentLen += name.length;
                 } else {
@@ -222,7 +231,7 @@
                 let line = rawShape[r];
                 let rowHTML = "<div>";
                 let i = 0;
-                
+
                 while (i < line.length) {
                     if (line[i] === '@') {
                         let start = i;
@@ -237,7 +246,7 @@
                 rowHTML += "</div>";
                 fullHTML += rowHTML;
             }
-            
+
             asciiContainer.innerHTML = fullHTML;
         }
 
@@ -251,7 +260,7 @@
                 let displayMins = mins % 60;
                 uptimeEl.innerText = `${hours} hours, ${displayMins} mins`;
             }, 60000);
-            uptimeEl.innerText = `0 hours, ${mins} mins`;
+            uptimeEl.innerText = `105 hours, 18 mins`;
         }
 
         window.onload = () => {
@@ -260,4 +269,5 @@
         };
     </script>
 </body>
+
 </html>
