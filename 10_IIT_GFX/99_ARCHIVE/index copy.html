@@ -11,7 +11,7 @@
     <style>
         body {
             /* Fullscreen background image */
-            background: url('image.png') no-repeat center center fixed;
+            background: url('image-aqua.png') no-repeat center center fixed;
             background-size: cover;
             font-family: 'Share Tech Mono', 'Ubuntu Mono', monospace;
             margin: 0;
@@ -61,7 +61,7 @@
 <body class="min-h-screen p-4 md:p-12 flex flex-col items-center justify-center">
 
     <!-- MacBook Window Container -->
-    <div class="mac-window w-full max-w-4xl mx-auto rounded-xl overflow-hidden flex flex-col">
+    <div class="mac-window w-full max-w-6xl mx-auto rounded-xl overflow-hidden flex flex-col">
 
         <!-- macOS Title Bar -->
         <div class="title-bar h-8 w-full flex items-center px-4 gap-2 relative">
@@ -142,24 +142,23 @@
             "Rafiu", "Bushra", "Sadik", "Shibli"
         ];
 
-        // The exact shape approved by the user, with reduced gap between 1 and 8
         const rawShape = [
-            "          @@@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@     ",
-            "        @@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@   ",
-            "      @@@@@@   @@@@@@     @@@@@@              @@@@@@  ",
-            "     @@@@@@    @@@@@@     @@@@@@              @@@@@@  ",
-            "    @@@@@@     @@@@@@     @@@@@@              @@@@@@  ",
-            "               @@@@@@     @@@@@@              @@@@@@  ",
-            "               @@@@@@      @@@@@              @@@@@   ",
-            "               @@@@@@       @@@@@@@@@@@@@@@@@@@@@@    ",
-            "               @@@@@@       @@@@@@@@@@@@@@@@@@@@@@    ",
-            "               @@@@@@      @@@@@              @@@@@   ",
-            "               @@@@@@     @@@@@@              @@@@@@  ",
-            "               @@@@@@     @@@@@@              @@@@@@  ",
-            "               @@@@@@     @@@@@@              @@@@@@  ",
-            "               @@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@  ",
-            "               @@@@@@        @@@@@@@@@@@@@@@@@@@@     ",
-            "                                                          "
+            "  1111      1111  00000000000000000000     @@@@@@@@@@@        @@@@@@@@@@@@@@@@@@@@     ",
+            "  1111      1111  00000000000000000000   @@@@@@@@@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@   ",
+            "  1111      1111          0000         @@@@@@   @@@@@@     @@@@@@              @@@@@@  ",
+            "  1111      1111          0000        @@@@@@    @@@@@@     @@@@@@              @@@@@@  ",
+            "  1111      1111          0000                  @@@@@@     @@@@@@              @@@@@@  ",
+            "  1111      1111          0000                  @@@@@@     @@@@@@              @@@@@@  ",
+            "  1111      1111          0000                  @@@@@@      @@@@@              @@@@@   ",
+            "  1111      1111          0000      111111      @@@@@@       @@@@@@@@@@@@@@@@@@@@@@    ",
+            "  1111      1111          0000      111111      @@@@@@       @@@@@@@@@@@@@@@@@@@@@@    ",
+            "  1111      1111          0000                  @@@@@@      @@@@@              @@@@@   ",
+            "  1111      1111          0000                  @@@@@@     @@@@@@              @@@@@@  ",
+            "  1111      1111          0000                  @@@@@@     @@@@@@              @@@@@@  ",
+            "  1111      1111          0000                  @@@@@@     @@@@@@              @@@@@@  ",
+            "  1111      1111          0000                  @@@@@@      @@@@@@@@@@@@@@@@@@@@@@@@  ",
+            "  1111      1111          0000                  @@@@@@        @@@@@@@@@@@@@@@@@@@@     ",
+            "                                                                                       "
         ];
 
         // Shuffle names initially to create a random but guaranteed queue
@@ -238,6 +237,10 @@
                         while (i < line.length && line[i] === '@') i++;
                         let blockLength = i - start;
                         rowHTML += fillSegmentHTML(blockLength);
+                    } else if (line[i] === '1' || line[i] === '0') {
+                        const bit = Math.random() > 0.5 ? '1' : '0';
+                        rowHTML += `<span class="text-green-500 font-bold">${bit}</span>`;
+                        i++;
                     } else {
                         rowHTML += '<span class="invisible">X</span>';
                         i++;
